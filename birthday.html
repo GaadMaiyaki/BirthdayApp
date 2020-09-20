@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Birthday App</title>
+        <link rel="stylesheet" type="text/css" href="birthday.css"/>
+    </head>
+    
+    <body onload="whenLoad();">
+        <div class="backgroundAnimations">
+            <div id="rectangle" style="background:#ED594A;"></div>
+            <div id="circle" style="background:#FDD800;"></div>
+            <div id="square" style="background:#5AC05A;"></div>
+        </div>
+        <main>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col left">
+                        <span class="dot" id="dot1" style="background:#ED594A;"></span>
+                        <span class="dot" id="dot2" style="background:#FDD800;"></span>
+                        <span class="dot" id="dot3" style="background:#5AC05A;"></span>
+                    </div>
+                    <div class="col middle">
+                        <input type="text" readonly value="BirthdayApp developed for Olajumoke "/>
+                    </div>
+                    <div class="col right">
+                        <div style="float: right;" id="bar">
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                        </div>
+                    </div>
+                    <div id="dashboard" class="toggleDashShow">
+                        <button id="dash">My DashBoard</button>
+                    </div>
+                </div>
+            </div>
+            <div class="display">
+                <h1 style="color:#ED594A; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">
+                    It's All About <br>Olajumoke Idowu's Birthday
+                </h1>       
+                <span>
+                    <h2 style="padding: 10px; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;" id="changeColor">July 23rd</h2>
+                </span>
+                <button id="nextME">Next &RightArrow;</button>
+            </div>
+            <div class="display" id="details">
+                <details>
+                    <summary><small>Click Here - Summary of the App</small></summary>
+                    <small id="sm">This Birthday App has been made for use of Olajumoke Rachael Idowu.
+                        It has a reg page... making sure it's used solely.
+                        Thereafter, there exists a page to login...
+                        Thus, the dashboard Menu Pops to view the Birthday Events.
+                    </small>
+                </details>
+            </div>
+            
+            <footer>
+                <small style="background: rgba(8, 8, 8, 0.418); padding:10px; display:block;">&copy; GaadMaiyaki ICT World 2020</small>
+            </footer>
+        </main>
+        
+        <section class="fillForm" id="fillForm">
+            <span class="close" id="close" onclick="document.getElementById('fillForm').style.display='none';">&times;</span>
+            <h1 style="border: 1px solid brown; display: inline; padding: 5px;" id="signUp">Sign Up</h1>
+            <div id="alert" style="text-align:center; color:rgb(214, 35, 35); margin-top: 40px;">
+                <hr><h3 style="margin-bottom: 30px; padding: 20px;">Sorry, you haven't provided any details yet.<hr style="margin-top: 20px;"></h3><hr>
+                <h4 style="margin-bottom: 30px; padding: 20px;"><cite>When you do, I've been programmed to display your dashboard.<br>
+                    I need to confrim the person using me.
+                </cite>
+                    <hr style="margin-top: 20px;">
+                </h4><hr>
+                <h4 style="padding: 20px;">You can click anywhere to close this message or Click the close(x) button.</h4><hr>
+            </div>
+            <section id="go">
+                <div class="fillFormContent" id="fillFormContent">
+                <p style="background: rgb(150, 37, 24); text-align: center; 
+                        padding: 10px 10px; border-radius: 2px; margin-bottom: 10px; color:#ffffff">
+                        <small>Create your Birthday Information</small>
+                    </p> 
+                    <hr>
+                    <div id="message" class="msg"></div>
+                    <form>
+                        <div class="formFill">
+                            <label><strong>First Name:</strong></label>
+                            <input id="fn" onblur="validateFormName(this.value, 'messageFn', 'olajumoke', 'unrecognized first name');" required type="text" placeholder="Enter First Name"/>
+                        </div>
+                        <div id="messageFn" class="msg"></div>
+                        <div class="formFill">
+                            <label><strong>Middle Name</strong></label>
+                            <input id="mn" onblur="validateFormName(this.value, 'messageMn', 'rachael', 'unrecognized middle name');"  required type="text" placeholder="Enter Middle Name"/>
+                        </div>
+                        <div id="messageMn" class="msg"></div>
+                        <div class="formFill">
+                            <label><strong>Last Name</strong></label>
+                            <input id="ln" onblur="validateFormName(this.value, 'messageLn', 'idowu', 'unrecognized last name');"  required type="text" placeholder="Enter Last Name"/>
+                        </div>
+                        <div id="messageLn" class="msg"></div>
+                        <div class="formFill">
+                            <label><strong>Password</strong></label>
+                            <input id="p" onblur="validateFormPass('messageP', 'messageCp');" required type="password" placeholder="Enter Password"/>
+                        </div>
+                        <div id="messageP" class="msg"></div>
+                        <div class="formFill">
+                            <label><strong>Confirm Password</strong></label>
+                            <input id="cp" onblur="validateFormPass('messageCp', 'messageP');" required type="password" placeholder="Confirm Password"/>
+                        </div>
+                        <div id="messageCp" class="msg"></div>
+                        <div class="formFill">
+                            <label><strong>Sender's Surname</strong></label>
+                            <input id="ss" oninput="validateSender(this.value, 'mayaki', 'messageSs');" required type="text" placeholder="Enter Surname of Sender"/>
+                        </div>
+                        <div id="messageSs" class="msg"></div>
+                        <div class="formFill">
+                            <label><strong>Religion</strong></label>
+                            <select style="margin-top: 10px;" id="select" required onchange="validateReligion(this.value, 'messageRel');">
+                                <option>Christianity</option>
+                                <option>Islam</option>
+                            </select>
+                            <div id="messageRel" class="msg"></div>
+                        </div>
+
+                        <div class="formFill">
+                            <input type="button" onclick="validateEmpty();" value="Submit Details"/>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <section id="displayLogin">
+                    <div class="fillFormContent" id="loginForm">
+                       <p style="background: rgb(150, 37, 24); text-align: center; 
+                            padding: 10px; border-radius: 2px; margin-bottom: 10px; color:#ffffff">
+                            <small>Input your login in details Olajumoke</small>
+                        </p>
+                        <hr>
+                        <div id="message" class="msg"></div>
+                        <form>
+                            <div class="formFill">
+                                <label><strong>Surname</strong></label>
+                                <input onblur="validateLoginUserName(this.value, 'msg');" required type="text" placeholder="Enter Surname"/>
+                            </div>
+                            <div id="msg" class="msg"></div>
+                            
+                            <div class="formFill">
+                                <label><strong>Password</strong></label>
+                                <input oninput="validateLoginPassword(this.value, 'messagePass');" required type="password" placeholder="Enter Password"/>
+                            </div>
+                            <div id="messagePass" class="msg"></div>
+                            
+                            <div class="formFill">
+                                <input type="button" id="loginBtn" value="Login"/>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+        </section>
+        
+        <div id="button">
+            <button class="buttons" id="openPage" onclick="myPagesToggler('countDown', this, 'rgba(26, 137, 201)');">
+                <small>CountDown</small>
+            </button>
+            <button class="buttons" onclick="myPagesToggler('Lyrics', this, 'rgba(27, 206, 27)');">
+                <small>Prayers</small>
+            </button>
+            <button class="buttons" onclick="myPagesToggler('aboutJuly', this, 'rgba(179, 121, 13)');">
+                <small>JulyBorn</small>
+            </button>
+        </div>
+        <section class="dashboardContentCover" id="dashboardContentCover">
+            <div id="countDown" class="dashboardContent">
+                <small id="displayText"></small>
+                <div class="showTime">
+                    <h2 id="adv" style="padding: 10px;">Omo Olojo Ibi<br>Happy Birthday To You In Advance!</h2>
+                </div>
+                <div class="showTime" id="showTime">
+                    <div id="toGo" style="text-align: center; padding:10px; color: rgb(65, 9, 3); background:rgb(26, 137, 201)">Time To Go!</div>
+                    <div id="special"></div>
+                    <div class="showTim" id="showTim" style="background: rgb(177, 94, 94);">
+                        <div class="show">
+                            <label>Days</label>
+                            <div id="Days" style="font-family: 'Courier New', Courier, monospace;"></div>
+                        </div>
+                        <div class="show">
+                            <label>Hours</label>
+                            <div id="Hours" style="font-family: 'Courier New', Courier, monospace;"></div>
+                        </div>
+                        <div class="show">
+                            <label>Mins</label>
+                            <div id=Minutes style=" font-family: 'Courier New', Courier, monospace;"></div>
+                        </div>
+                        <div class="show">
+                            <label>Secs</label>
+                            <div id=Seconds style="font-family: 'Courier New', Courier, monospace;"></div>
+                        </div>
+                    </div>
+                </div>
+                <button id="closeDash" onclick="document.getElementById('dashboardContentCover').style.display='none';
+                document.getElementById('button').style.display='none';">Close</button>
+            </div>
+            <div id="Lyrics" class="dashboardContent">
+                <div class="prayer">
+                  <div class="circle"><small>1</small></div>
+                  On your Birthday, I ask God to bless you with every kind of joy on your birhday and always. Happy Birthday!.
+                </div>
+                <div class="prayer">
+                <div class="circle"><small>2</small></div>
+                  May God bless you on your birthday and every day after. May you be comforted by His presence in your life,
+                  and always follow His guiding light. Amen.
+                </div>
+                <div style="padding:10px; color: rgb(37, 37, 2); margin-bottom: 5px;">Ensure that you turn on your mobile data.</div>
+                <div><small><a href="https://www.homemade-gifts-made-easy.com/birthday-prayer.html">Click Here for more</a></small></div>
+            </div>
+            <div id="aboutJuly" class="dashboardContent">
+                <h4 style="color:rgb(12, 11, 11); padding: 10px; background: rgba(26, 25, 25, 0.507);">About July Born</h4>
+                <div id="aboutJulyDisplayID" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"></div>
+            </div>
+
+        </section>
+        
+    </body>
+    <script type="text/javascript" src="birthday.js"></script>
+</html>
