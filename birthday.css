@@ -1,0 +1,492 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.backgroundAnimations{
+    position: absolute;
+    display: flex;
+    width: 100%;
+    top: 0;
+    justify-content: space-around;
+    opacity: 0.6;
+    z-index: -99;
+}
+.backgroundAnimations #rectangle{
+    width: 40px;
+    height: 50px;
+    animation: rectangle 2s ease-out infinite;
+}
+.backgroundAnimations #circle{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    animation: circle 2s ease-in-out infinite;
+}
+.backgroundAnimations #square{
+    width: 40px;
+    height: 40px;   
+    animation: square 2s ease-out infinite;
+}
+.container-fluid{
+    position: fixed;
+    top: 0;
+    width:100%;
+    border: 3px solid #f1f1f1;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.row{
+    background: #f1f1f1;
+    padding: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.col{
+    float: left;
+}
+.left{
+    width: 15%;
+}
+.middle{
+    width: 75%;
+}
+.right{
+    width: 10%;
+}
+.row:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+.dot{
+    margin-top: 5px;
+    height: 12px;
+    width: 12px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+}
+#dot1{
+    animation: jump 1.5s ease-in-out infinite;
+}
+#dot2{
+    animation: jump2 2s ease-in-out infinite;
+}
+#dot3{
+    animation: jump3 2.5s ease-in-out infinite;
+}
+.col input[type=text]{
+    width: 100%;
+    border-radius: 3px;
+    border: 2px solid rgb(13, 137, 209);
+    background-color: white;
+    margin-top: -10px;
+    height: 25px;
+    color: #666;
+    padding: 5px;
+    text-align: center;
+}
+.bar{
+    width: 20px;
+    height: 3px;
+    background:#ED594A;
+    margin: 3px 0;
+    display: block;
+    cursor: pointer;
+}
+#bar:hover{
+    padding: 2px;
+    background:rgb(201, 184, 182);
+}
+.display{
+    margin: 80px 3px 3px 3px;
+    text-align: center;
+}
+.display h1{
+    background: #eee;
+    padding: 20px;
+    border: 2px solid #FDD800;;
+    border-radius: 4px;
+    text-shadow: 5px 5px 10px rgb(223, 175, 175);
+}
+.display span{
+    width: 100%;
+    margin-top: 20px;
+    background: rgba(2, 7, 7, 0.932);
+    display: inline-block;
+}
+.toggleDashHidden{
+    display: none;
+}
+.toggleDashShow{
+    display: block;
+}
+#changeColor{
+    animation: changeColor 1s ease-in-out infinite;
+}
+#nextME{
+    margin-top: 20px;
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 10px 25px;
+    color: #ffffff;
+    background-color: rgb(51, 11, 7);
+    cursor: pointer;
+    box-shadow: 2px 1px 6px #555;
+}
+#nextME:hover{
+    background-color:rgb(151, 144, 144);
+    color: black;
+}
+.fillForm{
+    position: absolute;
+    top: -300px;
+    width: 100%;
+    height: 100%;
+    padding: 20px 20px 0 20px;
+    background: #eee;
+    transition: 2s;
+    animation: slide .25s ease-in-out forwards;
+}
+.close{
+    position: absolute;
+    cursor: pointer;
+    right: 35px;
+    top: 15px;
+    font-size: 40px;
+    font-weight: bold;
+    color: rgb(219, 212, 212);
+}
+.close:hover{
+    color: rgb(245, 240, 240);
+}
+.fillFormContent{
+    margin: 20px 0 50px 0;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px #666;
+    transition: 2s;
+}
+.fillFormContent input[type=text], input[type=password], #select{
+    width: 100%;
+    display: inline-block;
+    padding: 10px;
+    outline: 0;
+    border: 0;
+    border-bottom: 1px solid #ED594A;
+}
+.formFill{
+    margin: 10px 0 10px 0;
+}
+.fillForm .fillFormContent input[type=button], #loginForm input[type=button] {
+    text-align: center;
+    width: 100%;
+    background: rgb(150, 37, 24);
+    border: none;
+    padding:10px;
+    color: white;
+}
+.fillForm .fillFormContent button:hover{
+    background: #ED594A;
+}
+.msg{
+    font-size: 12px;
+    color: red;
+}
+#dashboard button{
+    float:right;
+    outline: none;
+    margin: 10px 0 10px 0;
+    padding: 8px 8px;
+    background: #5AC05A;
+    box-shadow: 5px 5px 10px #bbb;
+    border-radius: 10px 10px;
+    color: rgb(20, 20, 20);
+}
+#dashboard:hover{
+    background: rgb(158, 230, 158);
+}
+#details{
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    background: rgba(102, 102, 102, 0.596);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+#details details{
+    padding: 30px;
+    color: rgb(216, 211, 182);
+}
+summary{
+    background: #555;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: 1px 1px 4px rgb(70, 70, 67);
+}
+#sm{
+    border: 1px dashed green;
+    color: rgb(2, 26, 2);
+}
+footer{
+    z-index: 99;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    background: rgb(17, 17, 17);
+    color: #f1f1f1;
+    padding: 10px;
+    margin-top: 20px;
+    box-shadow: 5px 5px 10px rgb(114, 107, 6);
+}
+.dashboardContentCover{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    color: #bbb;
+    background: rgb(32, 32, 32);
+    text-align: center;
+}
+.dashboardContent{
+    width: 100%;
+    height: 100%;
+    
+    color: white;
+    padding: 100px 30px;
+    margin-left: -500px;
+    box-shadow: 2px 1px 6px rgb(129, 127, 127);
+    animation: slideInLeft .4s ease forwards;
+}
+#button{
+    display: flex;
+    z-index: 1;
+    position: fixed;
+    margin: 0;
+    top: 0;
+    width: 100%;
+    box-shadow: 2px 1px 7px rgb(10, 10, 10);
+    background: rgb(0, 13, 19);
+}
+.buttons{
+    background: none;
+    cursor: pointer;
+    width: 33.33%;
+    padding: 14px 16px;
+    font-size: 17px;
+    color: white;
+    border: none;
+    outline: none;
+    float: left;
+}
+
+#countDown {background-color: rgba(26, 137, 201, 0.959);}
+#Lyrics {background-color: rgba(27, 206, 27, 0.856);}
+#aboutJuly {display: flex; background-color: rgba(179, 121, 13, 0.842);}
+#displayText{
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    background: rgba(35, 49, 1, 0.959);
+    box-shadow: 2px 2px 5px rgb(41, 38, 38);
+    color: rgb(146, 143, 143);
+}
+.showTime{
+    background: rgba(187, 187, 187, 0.685);
+    box-shadow: 2px 2px 5px rgb(41, 38, 38);
+    margin-top: 20px;
+    border-radius:10px;
+    color: rgb(61, 61, 61);
+}
+#special{
+    padding: 10px;
+}
+.showTime h1{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.showTim{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    font-family: 'Courier New', Courier, monospace;
+}
+.show{
+    width: 25%;
+    font-size: 20px;
+    background: rgb(155, 154, 154);
+    box-shadow: 2px 2px 5px rgb(41, 38, 38);
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16.7px;
+    font-weight: bold;
+    color: rgb(15, 15, 15);
+}
+.prayer{
+    margin-bottom: 10px;
+    text-align: justify;
+    color: rgb(26, 19, 1);
+    border: 1px dashed rgb(237, 212, 74);
+    padding: 10px;
+    border-radius: 20px 0 20px 0;
+}
+.circle{
+    width: 20px;
+    height: 20px;
+    padding: 1px;
+    text-align: center;
+    border-radius: 50%;
+    background: rgb(29, 3, 0);
+    color: #bbb;
+    margin-bottom: 10px;
+    border: 1px solid rgb(78, 67, 6);
+}
+a{
+    text-decoration: none;
+    background: rgb(15, 15, 15);
+    color:#bbb;
+    padding: 10px;
+    border-radius: 5px;
+}
+a:hover{
+    background:#bbb;
+    color: black;   
+}
+#closeDash{
+    outline: none;
+    border: 0;
+    margin: 30px 0 10px 0;
+    padding: 10px 10px;
+    background: rgb(48, 36, 3);
+    box-shadow: 3px 2px 6px rgb(73, 70, 70);
+    border-radius: 10px 10px;
+    color: rgb(173, 159, 159);
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: lighter;
+}
+#closeDash:hover{
+    background: rgba(219, 199, 144, 0.589);
+    color: black;
+}
+.dance{
+    animation: dance .4s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
+}
+#aboutJulyDisplayID{
+    padding: 10px;
+    background: rgba(210, 105, 30, 0.486);
+    box-shadow: 1px 1px 2px rgb(105, 105, 105);
+}
+
+@keyframes changeColor{
+    0%{
+        color: #FDD800;
+        opacity: 0.2;
+        transform: rotateY(110deg);
+    }
+    50%{
+        transform: rotateY(-45deg);
+        color:#ED594A; 
+    }
+    80%{
+        color: rgb(159, 160, 216);
+    }
+    100%{
+        color:#5AC05A;
+    }
+}
+@keyframes jump{
+    100%{
+        transform: translateY(-2px);
+        opacity: 0.6;
+    }
+}
+@keyframes jump2{
+    100%{
+        transform: translateY(4px);
+        opacity: 0.6;
+    }
+}
+@keyframes jump3{
+    100%{
+        transform: translateY(-4px);
+        opacity: 0.6;
+    }
+}
+@keyframes rectangle{
+    0%{
+        transform: translateY(300px);
+        opacity: 0;
+    }
+    100%{
+        transform: rotate(180deg);
+    }
+}
+@keyframes circle{
+    0%{
+        transform: translateY(-30px);
+    }
+    20%{
+        transform: translateY(0px);
+        transform: scale(2);
+    }
+    40%{
+        transform: translateY(100px);
+    }
+    60%{
+        transform: translateY(0px);
+        transform: scale(2);
+    }
+    80%{
+        transform: scale(2);
+        transform: translateY(300px);
+    }
+    100%{
+        transform: scale(2);
+    }
+}
+@keyframes square{
+    0%{
+        opacity: 0;
+        transform: translateY(300px);
+    }
+    100%{
+        transform: rotate(-180deg);
+    }
+}
+@keyframes slide{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        top: 0;
+        opacity: 1;
+    }
+}
+@keyframes dance{
+    0%{
+        transform: translateX(-10px);
+        background: #FDD800;
+    }
+    50%{
+        transform: translateX(0px); 
+        background: #5AC05A;
+    }
+    100%{
+        transform: translateX(10px);
+        background: rgb(209, 134, 125);
+    }
+}
+
+@keyframes slideInLeft{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        margin-left: 0px;;
+    }
+}
